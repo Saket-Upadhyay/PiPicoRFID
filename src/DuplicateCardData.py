@@ -23,11 +23,12 @@
 import mfrc522
 from os import uname
 from time import sleep
+
+
 class RFIDCard:
-    
+
     def __init__(self) -> None:
         self.rdr = mfrc522.MFRC522(sck=2, miso=4, mosi=3, cs=1, rst=0)
-
 
     def ReadData(self):
         # rdr = mfrc522.MFRC522(sck=2, miso=4, mosi=3, cs=1, rst=0)

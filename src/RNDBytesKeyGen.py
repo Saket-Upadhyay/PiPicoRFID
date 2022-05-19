@@ -25,8 +25,9 @@ import random
 
 from pip import main
 
+
 class GetKey:
-    def getRandomKey(self,keylen):
+    def getRandomKey(self, keylen):
         LETTERS = string.ascii_letters
         NUMBERS = string.digits
         passlength = keylen
@@ -37,9 +38,10 @@ class GetKey:
         random_password = ''.join(random_password)
         return random_password
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     DataLength = 16
-    RNDKEY=GetKey()
+    RNDKEY = GetKey()
     datastring = RNDKEY.getRandomKey(16)
     print("Key : "+datastring)
     datahex = []
