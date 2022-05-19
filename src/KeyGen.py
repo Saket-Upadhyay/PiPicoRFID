@@ -39,8 +39,7 @@ class GetKey:
         return random_password
 
 
-if __name__ == "__main__":
-    DataLength = 16
+def RUN():
     RNDKEY = GetKey()
     datastring = RNDKEY.getRandomKey(16)
     print("Key : " + datastring)
@@ -58,3 +57,6 @@ if __name__ == "__main__":
         for i in range(0, Padding):
             ModData = ModData + "\\x00"
     print("HexData to Write : \"" + ModData + "\"")
+
+if __name__ == "__main__":
+    RUN()

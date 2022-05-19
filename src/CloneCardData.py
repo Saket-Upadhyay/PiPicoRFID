@@ -92,7 +92,8 @@ class RFIDCard:
         except KeyboardInterrupt:
             print("EXITING PROGRAM.")
 
-if __name__ == "__main__":
+
+def RUN():
     print("Initialising Module=> " + str(uname()[0]))
     CardObject = RFIDCard()
     Secret = CardObject.ReadData()
@@ -100,4 +101,7 @@ if __name__ == "__main__":
     print(bytes(Secret))
     print("remove the card.")
     sleep(2)
-    CardObject.WriteData(bytes(Secret))
+    CardObject.WriteData(bytes(Secret))    
+
+if __name__ == "__main__":
+    RUN()

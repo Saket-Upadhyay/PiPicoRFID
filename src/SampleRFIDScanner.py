@@ -39,7 +39,7 @@ class RFIDCard:
         FIXHASH = ""
         for i in FKD:
             FIXHASH = FIXHASH + hex(ord(i))
-        if HSD == FKD:
+        if HSD == FIXHASH:
             return 1
         return 0
 
@@ -68,7 +68,8 @@ class RFIDCard:
             print("EXITING PROGRAM.")
 
 
-if __name__ == "__main__":
+
+def RUN():
     CardObject = RFIDCard()
     FIXKEYSTR = "DwMo0G8ImmULsJDe"
     CardData = CardObject.ReadData()
@@ -77,3 +78,7 @@ if __name__ == "__main__":
         print("AUTH SUCCESS. Access Granted.")
     else:
         print("Access Denied.")
+
+
+if __name__ == "__main__":
+    RUN()
