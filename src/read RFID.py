@@ -23,7 +23,7 @@
 import mfrc522
 from os import uname
 
-print("Initialising Module=> "+str(uname()[0]))
+print("Initialising Module=> " + str(uname()[0]))
 
 rdr = mfrc522.MFRC522(sck=2, miso=4, mosi=3, cs=1, rst=0)
 
@@ -56,10 +56,10 @@ try:
                         datastr = ""
                         hexstr = []
                         for i in data:
-                            datastr=datastr+(chr(i))
+                            datastr = datastr + (chr(i))
                             hexstr.append(hex(i))
-                        print("DATA: "+str(datastr))
-                        print("RAW DATA: "+str(hexstr))
+                        print("DATA: " + str(datastr))
+                        print("RAW DATA: " + str(hexstr))
                         rdr.stop_crypto1()
                     else:
                         print("AUTH ERR")

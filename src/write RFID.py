@@ -23,7 +23,7 @@
 import mfrc522
 from os import uname
 
-print("Init. "+str(uname()[0]))
+print("Init. " + str(uname()[0]))
 
 rdr = mfrc522.MFRC522(sck=2, miso=4, mosi=3, cs=1, rst=0)
 

@@ -35,6 +35,7 @@ _SCANLIMIT = const(11)
 _SHUTDOWN = const(12)
 _DISPLAYTEST = const(15)
 
+
 class Matrix8x8:
     def __init__(self, spi, cs, num):
         """
@@ -59,7 +60,7 @@ class Matrix8x8:
         # because inheritance from a native class is currently unsupported.
         # http://docs.micropython.org/en/latest/pyboard/library/framebuf.html
         self.fill = fb.fill  # (col)
-        self.pixel = fb.pixel # (x, y[, c])
+        self.pixel = fb.pixel  # (x, y[, c])
         self.hline = fb.hline  # (x, y, w, col)
         self.vline = fb.vline  # (x, y, h, col)
         self.line = fb.line  # (x1, y1, x2, y2, col)
@@ -78,11 +79,11 @@ class Matrix8x8:
 
     def init(self):
         for command, data in (
-            (_SHUTDOWN, 0),
-            (_DISPLAYTEST, 0),
-            (_SCANLIMIT, 7),
-            (_DECODEMODE, 0),
-            (_SHUTDOWN, 1),
+                (_SHUTDOWN, 0),
+                (_DISPLAYTEST, 0),
+                (_SCANLIMIT, 7),
+                (_DECODEMODE, 0),
+                (_SHUTDOWN, 1),
         ):
             self._write(command, data)
 

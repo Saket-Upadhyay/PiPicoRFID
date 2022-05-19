@@ -32,13 +32,13 @@ class RFIDCard:
     def ConvertToHexString(self, data):
         hexstring = ""
         for i in data:
-            hexstring = hexstring+(hex(i))
+            hexstring = hexstring + (hex(i))
         return hexstring
 
     def AuthCard(self, HSD, FKD):
         FIXHASH = ""
         for i in FKD:
-            FIXHASH = FIXHASH+hex(ord(i))
+            FIXHASH = FIXHASH + hex(ord(i))
 
         if HSD == FKD:
             return 1
@@ -59,7 +59,7 @@ class RFIDCard:
                             key = [0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF]
                             if self.rdr.auth(self.rdr.AUTHENT1A, 8, key, raw_uid) == self.rdr.OK:
                                 data = self.rdr.read(8)
-                                return(data)
+                                return (data)
                             else:
                                 print("AUTH ERR")
                         else:

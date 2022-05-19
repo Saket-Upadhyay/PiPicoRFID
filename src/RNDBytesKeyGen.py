@@ -43,18 +43,18 @@ if __name__ == "__main__":
     DataLength = 16
     RNDKEY = GetKey()
     datastring = RNDKEY.getRandomKey(16)
-    print("Key : "+datastring)
+    print("Key : " + datastring)
     datahex = []
     for i in datastring:
         datahex.append(hex(ord(i)))
     if len(datahex) != 16:
-        Padding = 16-len(datahex)
+        Padding = 16 - len(datahex)
 
     ModData = ""
     for val in datahex:
-        ModData = ModData+"\\"+str(val)[1:]
+        ModData = ModData + "\\" + str(val)[1:]
 
     if len(datahex) != 16:
         for i in range(0, Padding):
-            ModData = ModData+"\\x00"
-    print("HexData to Write : \""+ModData+"\"")
+            ModData = ModData + "\\x00"
+    print("HexData to Write : \"" + ModData + "\"")

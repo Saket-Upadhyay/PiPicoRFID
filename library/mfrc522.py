@@ -1,5 +1,5 @@
-#Base Code taken from https://github.com/wendlers/micropython-mfrc522
-#Modified as per requirement by Saket Upadhyay for his undergraduate Capstone Project.
+# Base Code taken from https://github.com/wendlers/micropython-mfrc522
+# Modified as per requirement by Saket Upadhyay for his undergraduate Capstone Project.
 
 # The MIT License (MIT)
 # Copyright (c) 2016 Stefan Wendler
@@ -24,7 +24,6 @@ from os import uname
 
 
 class MFRC522:
-
     OK = 0
     NOTAGERR = 1
     ERR = 2

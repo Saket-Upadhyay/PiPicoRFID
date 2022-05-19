@@ -50,7 +50,7 @@ class RFIDCard:
                             key = [0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF]
                             if self.rdr.auth(self.rdr.AUTHENT1A, 8, key, raw_uid) == self.rdr.OK:
                                 data = self.rdr.read(8)
-                                return(data)
+                                return (data)
                             else:
                                 print("AUTH ERR")
                         else:
@@ -86,7 +86,7 @@ class RFIDCard:
                                 rdr.stop_crypto1()
                                 if stat == rdr.OK:
                                     print("DATA WRITTEN TO ADDRESS 0x08")
-                                    return(0)
+                                    return (0)
                                 else:
                                     print("FAILED")
                             else:
@@ -98,11 +98,11 @@ class RFIDCard:
             # exit()
         # except Exception:
         #     print("Error, Exiting Program.")
-            # exit()
+        # exit()
 
 
 if __name__ == "__main__":
-    print("Initialising Module=> "+str(uname()[0]))
+    print("Initialising Module=> " + str(uname()[0]))
     CardObject = RFIDCard()
     Secret = CardObject.ReadData()
     print(Secret)
