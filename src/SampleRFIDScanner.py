@@ -39,7 +39,6 @@ class RFIDCard:
         FIXHASH = ""
         for i in FKD:
             FIXHASH = FIXHASH + hex(ord(i))
-
         if HSD == FKD:
             return 1
         return 0

@@ -31,7 +31,6 @@ class RFIDCard:
         self.rdr = mfrc522.MFRC522(sck=2, miso=4, mosi=3, cs=1, rst=0)
 
     def ReadData(self):
-        # rdr = mfrc522.MFRC522(sck=2, miso=4, mosi=3, cs=1, rst=0)
         print("")
         print("Place Original card before reader.")
         print("")
@@ -58,10 +57,7 @@ class RFIDCard:
 
         except KeyboardInterrupt:
             print("EXITING PROGRAM.")
-            # exit()
-        # except Exception:
-        #     print("Error, Exiting Program.")
-        #     # exit()
+
 
     def WriteData(self, databytes):
         rdr = mfrc522.MFRC522(sck=2, miso=4, mosi=3, cs=1, rst=0)
@@ -95,11 +91,6 @@ class RFIDCard:
                             print("Failed to select tag")
         except KeyboardInterrupt:
             print("EXITING PROGRAM.")
-            # exit()
-        # except Exception:
-        #     print("Error, Exiting Program.")
-        # exit()
-
 
 if __name__ == "__main__":
     print("Initialising Module=> " + str(uname()[0]))

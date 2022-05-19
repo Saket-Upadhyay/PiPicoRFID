@@ -52,7 +52,7 @@ try:
                     key = [0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF]
 
                     if rdr.auth(rdr.AUTHENT1A, 8, key, raw_uid) == rdr.OK:
-                        stat = rdr.write(8, b"\x44\x77\x4d\x6f\x30\x47\x38\x49\x6d\x6d\x55\x4c\x73\x4a\x44\x65")
+                        stat = rdr.write(8, b"\x44\xFF\x4d\x6f\xFF\x47\xFF\x49\x6d\x6d\x55\xFF\x73\x4a\x44\x65")
                         rdr.stop_crypto1()
                         if stat == rdr.OK:
                             print("DATA WRITTEN TO ADDRESS 0x08")
