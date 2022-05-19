@@ -20,18 +20,39 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import string
+import random
 
-DataLength = 16
-datadtring = "Saket"
-datahex = []
-for i in datadtring:
-    datahex.append(hex(ord(i)))
-if len(datahex) != 16:
-    Padding = 16-len(datahex)
-print(Padding)
-ModData = ""
-for val in datahex:
-    ModData = ModData+"\\"+str(val)[1:]
-for i in range(0, Padding):
-    ModData = ModData+"\\x00"
-print(ModData)
+from pip import main
+
+class GetKey:
+    def getRandomKey(self,keylen):
+        LETTERS = string.ascii_letters
+        NUMBERS = string.digits
+        passlength = keylen
+        printable = f'{LETTERS}{NUMBERS}'
+        printable = list(printable)
+        random.shuffle(printable)
+        random_password = random.choices(printable, k=passlength)
+        random_password = ''.join(random_password)
+        return random_password
+
+if __name__=="__main__":
+    DataLength = 16
+    RNDKEY=GetKey()
+    datastring = RNDKEY.getRandomKey(16)
+    print("Key : "+datastring)
+    datahex = []
+    for i in datastring:
+        datahex.append(hex(ord(i)))
+    if len(datahex) != 16:
+        Padding = 16-len(datahex)
+
+    ModData = ""
+    for val in datahex:
+        ModData = ModData+"\\"+str(val)[1:]
+
+    if len(datahex) != 16:
+        for i in range(0, Padding):
+            ModData = ModData+"\\x00"
+    print("HexData to Write : \""+ModData+"\"")

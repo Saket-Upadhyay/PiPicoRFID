@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import "../library/mfrc522"
+import mfrc522
 from os import uname
 
 print("Init. "+str(uname()[0]))

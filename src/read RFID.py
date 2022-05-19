@@ -20,10 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import "../library/mfrc522"
+import mfrc522
 from os import uname
 
-print("Init. "+str(uname()[0]))
+print("Initialising Module=> "+str(uname()[0]))
 
 rdr = mfrc522.MFRC522(sck=2, miso=4, mosi=3, cs=1, rst=0)
 
@@ -53,10 +53,13 @@ try:
 
                     if rdr.auth(rdr.AUTHENT1A, 8, key, raw_uid) == rdr.OK:
                         data = rdr.read(8)
-                        datastr = []
+                        datastr = ""
+                        hexstr = []
                         for i in data:
-                            datastr.append(chr(i))
+                            datastr=datastr+(chr(i))
+                            hexstr.append(hex(i))
                         print("DATA: "+str(datastr))
+                        print("RAW DATA: "+str(hexstr))
                         rdr.stop_crypto1()
                     else:
                         print("AUTH ERR")
