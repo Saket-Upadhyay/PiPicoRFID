@@ -24,7 +24,7 @@ Code and modified library to Read/Write data in MIFARE RFID Cards and Tokens usi
 |     SDA                             |     GP1                      |
 
 #### Set-up MicroPython in Pico
-To set-up Pico with micropython [READ THIS PDF](#)
+To set-up Pico with micropython [READ THIS PDF](https://github.com/Saket-Upadhyay/PiPicoRFID/blob/main/docs/raspberry-pi-pico-python-sdk.pdf)
 
 `source : https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf (27 May 2022, 20:10 IST)`
 
@@ -67,5 +67,5 @@ CloneCardData.RUN()
 ```
 
 ## Project Report and Presentation
-1. [Project Report (DOCX->PDF)]()
+1. [Project Report (DOCX->PDF)](https://github.com/Saket-Upadhyay/PiPicoRFID/blob/main/docs/RFID%2B%2B%20Final%20Project%20Report.pdf)
 2. [Presentation (PPTX->PDF)](https://github.com/Saket-Upadhyay/PiPicoRFID/blob/main/docs/RFID%2B%2B%20Testing%20existing%20security%20of%20RFID%20cards%20for%20next-gen%20authentication%20systems.pdf)
