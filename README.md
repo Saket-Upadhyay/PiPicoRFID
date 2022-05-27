@@ -23,7 +23,15 @@ Code and modified library to Read/Write data in MIFARE RFID Cards and Tokens usi
 |     SCK                             |     GP2                      |
 |     SDA                             |     GP1                      |
 
+#### Set-up MicroPython in Pico
+To set-up Pico with micropython [READ THIS PDF](#)
+
+`source : https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf (27 May 2022, 20:10 IST)`
+
 ### Modules
+> Run the modules via minicom or other serial interface.
+> serial interface on Pico will interact with MicroPython
+> To learn how to communicate with MicroPython of Pico in Windows using WSL, read [THIS ARTICLE](#).
 #### readRFID
 This module is used to read data from RFID card, to use
 ```python3
@@ -41,7 +49,6 @@ import writeRFID
 writeRFID.RUN()
 ```
 #### KeyGen
-
 ```powershell
 PS PiPicoRFID\src> python3 .\KeyGen.py
 Key : RYhpNkAgIpBmbrL9
@@ -49,5 +56,16 @@ HexData to Write : "\x52\x59\x68\x70\x4e\x6b\x41\x67\x49\x70\x42\x6d\x62\x72\x4c
 ```
 
 #### SampleRFIDScanner
-
+```python3
+import SampleRFIDScanner
+SampleRFIDScanner.RUN()
+```
 #### CloneCardData
+```python3
+import CloneCardData
+CloneCardData.RUN()
+```
+
+## Project Report and Presentation
+1. [Project Report (DOCX->PDF)]()
+2. [Presentation (PPTX->PDF)](https://github.com/Saket-Upadhyay/PiPicoRFID/blob/main/docs/RFID%2B%2B%20Testing%20existing%20security%20of%20RFID%20cards%20for%20next-gen%20authentication%20systems.pdf)
